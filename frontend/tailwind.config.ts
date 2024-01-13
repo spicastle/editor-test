@@ -1,5 +1,11 @@
 import type { Config } from 'tailwindcss'
 
+const unit = {};
+const htmlFontSize = 16;
+for ( let count = 0; count <= 3000; count++ ) {
+  unit[ count ] = ( count / htmlFontSize ) + "rem";
+}
+
 const config: Config = {
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
@@ -15,6 +21,18 @@ const config: Config = {
       },
     },
   },
+  presets: [
+    {
+      theme: {
+        spacing     : unit,
+        fontSize    : unit,
+        borderRadius: unit,
+        extend      : {
+          lineHeight: unit,
+        },
+      },
+    },
+  ],
   plugins: [],
 }
 export default config
