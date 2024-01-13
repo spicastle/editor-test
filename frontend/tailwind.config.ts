@@ -1,9 +1,20 @@
 import type { Config } from 'tailwindcss'
 
-const unit = {};
-const htmlFontSize = 16;
-for ( let count = 0; count <= 3000; count++ ) {
-  unit[ count ] = ( count / htmlFontSize ) + "rem";
+interface IPresetUnit {
+  [i:string]: string
+}
+
+const presetUnit = (num:number) => {
+  const unit: IPresetUnit = {};
+  const defaultFontSize:number = 16;
+  let i:number = 0;
+
+  while ( i < num + 1) {
+    unit[i] = ( i / defaultFontSize ) + "rem";
+    i++;
+  }
+
+  return unit;
 }
 
 const config: Config = {
@@ -24,11 +35,11 @@ const config: Config = {
   presets: [
     {
       theme: {
-        spacing     : unit,
-        fontSize    : unit,
-        borderRadius: unit,
+        spacing     : presetUnit(1000),
+        fontSize    : presetUnit(200),
+        borderRadius: presetUnit(2000),
         extend      : {
-          lineHeight: unit,
+          lineHeight: presetUnit(2000),
         },
       },
     },
