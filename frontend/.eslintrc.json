@@ -1,3 +1,31 @@
 {
-  "extends": "next/core-web-vitals"
+	"env": {
+		"browser": true,
+		"es2021": true,
+		"node": true
+	},
+	"parser": "@typescript-eslint/parser",
+	"extends": [
+		"plugin:@typescript-eslint/recommended",
+		"airbnb",
+		"airbnb/hooks",
+		"airbnb-typescript"
+	],
+	"parserOptions": {
+		"project" : "./tsconfig.json"
+	},
+	"plugins": [
+		"prettier",
+		"@typescript-eslint"
+	],
+	"rules": {
+		"react/react-in-jsx-scope": "off", // JSX 사용시 React 명식적으로 안가져와도 된다.
+		"react/prop-types": "off", // Typescript에서 props type 제어
+		"jsx-a11y/anchor-is-valid": "off", // a 태그 내에 속성 유무 검사
+		"react/jsx-props-no-spreading": "off", // props spreading 설정
+		"import/no-extraneous-dependencies": "off", // dependencies, peerDependencies, optionalDependencies에 명시되지 않은 패키지의 가져오기를 금지
+		"jsx-a11y/label-has-associated-control": "off", // <label> 연관 html label 태그 필수 처리
+		"key-spacing": ["error", { "beforeColon": false, "afterColon": true }], // javascript 콜론사이 공백제어
+		"@typescript-eslint/type-annotation-spacing": ["error", { "before": false, "after": true }] // typescript 콜론사이 공백제어
+	}
 }
