@@ -6,7 +6,9 @@ addAssignees: author
 
 # A list of assignees, overrides reviewers if set
 assignees:
-  - kentaro-m
+  - AlBaneo93
+  - SMARAGD88
+  - marong0309
 
 # A number of assignees to add to the pull request
 # Set to 0 to add all of the assignees.
