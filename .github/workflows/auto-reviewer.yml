@@ -5,12 +5,11 @@ name: Assign Reviewers
 # Controls when the action will run. Workflow runs when manually triggered using the UI
 # or API.
 on:
-  - pull_request_target
+  pull_request:
+    types: [opened, ready_for_review]
 
 jobs:
   add-reviews:
     runs-on: ubuntu-latest
     steps:
-      - uses: kentaro-m/auto-assign-action@v1.2.4
-        with:
-          configuration-path: ".github/auto_assign.yml"
+      - uses: kentaro-m/auto-assign-action@v1.2.6
