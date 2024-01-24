@@ -10,6 +10,7 @@
     "lint:fix": "eslint --fix 'src/**/*.{js,jsx,ts,tsx,json}'"
   },
   "dependencies": {
+    "@tanstack/react-query": "^5.17.19",
     "next": "14.0.4",
     "react": "^18",
     "react-dom": "^18"
