@@ -27,5 +27,19 @@
 		"jsx-a11y/label-has-associated-control": "off", // <label> 연관 html label 태그 필수 처리
 		"key-spacing": ["error", { "beforeColon": false, "afterColon": true }], // javascript 콜론사이 공백제어
 		"@typescript-eslint/type-annotation-spacing": ["error", { "before": false, "after": true }] // typescript 콜론사이 공백제어
+	},
+	"settings": {
+		"import/extensions": [".js", ".jsx", ".ts", ".tsx"],
+		"import/parsers": {
+			"@typescript-eslint/parser": [".ts", ".tsx"]
+		},
+		"import/resolver": {
+			"typescript": {
+				"directory": "./tsconfig.json"
+			},
+			"node": {
+				"extensions": [".js", ".jsx", ".ts", ".tsx"]
+			}
+		}
 	}
 }
