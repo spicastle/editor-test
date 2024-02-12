@@ -1,7 +1,7 @@
 'use client';
 
 import { useQuery } from '@tanstack/react-query';
-import { GET } from '@/app/api/fetcher';
+import { GET, POST } from '@/api/fetcher';
 
 export default function Home() {
   const fetchTestResult = useQuery({
@@ -13,6 +13,10 @@ export default function Home() {
     },
   });
 
+  const fetchTestResultPost = async () => {
+    await POST('/testApi.json', { id: 1 });
+  };
+
   const { data: testResult } = fetchTestResult;
 
   console.log('result', testResult);
@@ -23,6 +27,8 @@ export default function Home() {
 
       <div className="text-50">50</div>
       <div className="text-100">100</div>
+
+      <button onClick={fetchTestResultPost}>Click</button>
     </>
   );
 }

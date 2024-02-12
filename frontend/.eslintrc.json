@@ -27,7 +27,8 @@
 		"import/no-extraneous-dependencies": "off", // dependencies, peerDependencies, optionalDependencies에 명시되지 않은 패키지의 가져오기를 금지
 		"jsx-a11y/label-has-associated-control": "off", // <label> 연관 html label 태그 필수 처리
 		"key-spacing": ["error", { "beforeColon": false, "afterColon": true }], // javascript 콜론사이 공백제어
-		"@typescript-eslint/type-annotation-spacing": ["error", { "before": false, "after": true }] // typescript 콜론사이 공백제어
+		"@typescript-eslint/type-annotation-spacing": ["error", { "before": false, "after": true }], // typescript 콜론사이 공백제어
+		"no-alert": "off" // alert 파라미터에 대한 타입체크 설정
 	},
 	"settings": {
 		"import/extensions": [".js", ".jsx", ".ts", ".tsx"],
