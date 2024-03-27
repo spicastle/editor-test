@@ -17,6 +17,8 @@ export default function SocketIoProvider({ children }: PropsWithChildren) {
   const [socket, setSocket] = useState<any | null>(null);
   const [isConnected, setIsConnected] = useState(false);
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  // useEffect 상태 체크 배열 값에 대한 불필요한 lint 버그 표출 안되도록 처리하는 주석
   useEffect(() => {
     if (!socket) {
       return;
