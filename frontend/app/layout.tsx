@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import { ReactNode } from 'react';
 import ReactQueryProvider from '@/utils/react-query-provider';
+import SocketIoProvider from '@/utils/socket-io-provider';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -20,7 +21,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <ReactQueryProvider>
-          {children}
+          <SocketIoProvider>
+            {children}
+          </SocketIoProvider>
         </ReactQueryProvider>
       </body>
     </html>
